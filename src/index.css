@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen text-white;
+  }
+  
+  /* Custom scrollbar styles - using standard CSS since scrollbar-thin isn't available */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #7c3aed #374151;
+  }
+  
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #374151;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: #7c3aed;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .math-formula {
+    @apply font-mono text-lg bg-slate-800 p-2 rounded border border-purple-500/30;
+  }
+  
+  .game-card {
+    @apply bg-gradient-to-br from-slate-800 to-slate-900 border border-purple-500/30 rounded-lg p-6 hover:border-purple-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20;
+  }
+  
+  .interactive-element {
+    @apply cursor-pointer transform hover:scale-105 transition-transform duration-200;
+  }
+} 
